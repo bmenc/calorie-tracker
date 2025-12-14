@@ -19,6 +19,6 @@ export const activityReducer = (
         case "save-activity":{console.log("desde el type de save-activity");
         } break;
     
-        default: break;
+        default: return state;
     }
 }
