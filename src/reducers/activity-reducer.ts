@@ -8,7 +8,7 @@ type ActivityState = {
 }
 
 export const initialState: ActivityState = {
-    activities: []
+    activities: [],
 }
 
 export const activityReducer = (
@@ -16,7 +16,11 @@ export const activityReducer = (
     action: ActivityActions
 ) => {
     switch (action.type) {
-        case "save-activity":{console.log("desde el type de save-activity");
+        case "save-activity":{
+            return {
+                ...state,
+                activities:[...state.activities, action.payload.newActivity]
+            }
         } break;
     
         default: return state;
