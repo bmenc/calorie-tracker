@@ -16,13 +16,14 @@ export const activityReducer = (
     action: ActivityActions
 ) => {
     switch (action.type) {
-        case "save-activity":{
+        case "save-activity": {
             return {
                 ...state,
-                activities:[...state.activities, action.payload.newActivity]
+                activities: [...state.activities, action.payload.newActivity],
+                auth: false
             }
         } break;
-    
+
         default: return state;
     }
 }
